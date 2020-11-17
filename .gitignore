@@ -1,0 +1,4 @@
+/terragrunt/aws/infinite/ECR/.terragrunt-cache/*
+/terragrunt/terraform
+/terragrunt/terragrunt
+/.idea/
