@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "this" {
   bucket = "${var.account_id}-${var.environment}-s3-website.hashicorp.com"
   acl    = "public-read"
   tags = var.tags
-//  policy = file("policy.json")
+  policy = file("policy.json")
 
   website {
     index_document = "index.html"
