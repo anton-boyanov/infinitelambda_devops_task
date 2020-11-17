@@ -1,0 +1,57 @@
+#------------------------------------------------------
+# Environment specific variables 
+#------------------------------------------------------
+
+# Global variables
+environment: "devops" # ----------------------------------------------------- prod
+appd_app_name: "PMGateway-7761-PROD" # ----------------------------------------------------- prod
+appD: "true" # ----------------------------------------------------- prod
+install_antivirus: "true" # ----------------------------------------------------- prod
+install_ids_probe: "true" # ----------------------------------------------------- prod
+install_twistlock: "true" # ----------------------------------------------------- prod
+register_nessus: "true" # ----------------------------------------------------- prod
+install_appd: "true" # ----------------------------------------------------- prod
+
+# EC2 AMI
+ami_owner: "723100465694"  # ----------------------------------------------------- prod
+#ami: "Elavon-ECS-CentOS7-2020-08-28T22-18-37*" # ----------------------------------------------------- prod
+ami: "Elavon-ECS-CentOS7-2020-08-14T20-17-14*" # ----------------------------------------------------- prod
+
+# VAULT
+VAULT_HOST: "hcvault.us.bank-dns.com" # ----------------------------------------------------- prod
+VAULT_ADDR: "https://hcvault.us.bank-dns.com" # ----------------------------------------------------- prod
+VAULT_NAMESPACE: "7761" # ----------------------------------------------------- prod
+VAULT_BACKEND: "secret" # ----------------------------------------------------- prod
+
+# AutoScalling
+cluster_autoscaling: "true"
+max_availability_zones: 2
+cluster_desired_capacity: 2
+cluster_minimum_size: 0
+cluster_maximum_size: 16
+performance_level: "m_high"
+
+# AutoScalling Tasks
+task_autoscaling: "true"
+max_capacity: 16
+min_capacity: 2
+tasks_per_service: 2
+scale_down_adjustment: -1
+scale_down_cooldown: 300
+scale_up_adjustment: 2
+scale_up_cooldown: 180
+container_cpu: 400
+container_memory: 1800
+
+# MSK
+kafka_version: "2.2.1"
+number_of_broker_nodes: 4
+instance_type: "kafka.m5.large"
+ebs_volume_size: 1000
+
+# RDS
+backup_retention_period: 34
+engine: "aurora-mysql"
+engine_version: "5.7.mysql_aurora.2.07.2"
+skip_final_snapshot: "true"
+instance_class: "db.r5.xlarge"
