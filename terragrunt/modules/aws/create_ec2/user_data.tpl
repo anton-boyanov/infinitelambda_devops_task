@@ -1,4 +1,4 @@
-#!/bin/bash${cluster_name}"
+#!/bin/bash
 yum -y update
 yum -y install docker
 systemctl start docker

@@ -4,8 +4,6 @@ variable "environment" {
   default = "ALL"
 }
 
-variable "build_tag" {}
-
 variable "project" {
   default = "aboyanov"
 }

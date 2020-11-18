@@ -1,9 +1,22 @@
+# Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
+# working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "../../../../../modules/aws/iam"
+  source = "../../../../../modules/aws/vpc"
 }
 
+# Include all settings from the root terragrunt.OLD file
 include {
   path = find_in_parent_folders()
+}
+
+dependencies {
+  paths = [
+    "../../../tags",
+  ]
+}
+
+dependency "tags" {
+  config_path = "../../../tags"
 }
 
 locals {
@@ -16,21 +29,10 @@ locals {
   )
 }
 
-dependencies {
-  paths = [
-    "../tags"
-  ]
-}
-
-dependency "tags" {
-  config_path = "../tags"
-}
-
-
 inputs = {
-  account_id = local.common_vars.account_id
   awsRegion = local.common_vars.awsRegion
   environment = local.common_vars.environment
   tags = dependency.tags.outputs.tags
 }
+
 

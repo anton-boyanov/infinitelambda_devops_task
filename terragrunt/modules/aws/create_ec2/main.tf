@@ -26,8 +26,7 @@ data "aws_ami" "amazon-linux-2" {
 }
 
 data "template_file" "user_data" {
-  /* What if someone passed in template and they do not include the 'ECS_CLUSTER'? */
-  template = file("${path.module}/user-data.tpl")
+  template = file("${path.module}/user_data.tpl")
 
 }
 

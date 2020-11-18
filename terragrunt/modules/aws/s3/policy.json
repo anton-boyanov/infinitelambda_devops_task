@@ -9,7 +9,7 @@
         "s3:GetObject"
       ],
       "Resource": [
-        "arn:aws:s3:::406296236709-devops-s3-website.hashicorp.com/*"
+        "arn:aws:s3:::406296236709-devops-s3-hello-website/*"
       ]
     }
   ]

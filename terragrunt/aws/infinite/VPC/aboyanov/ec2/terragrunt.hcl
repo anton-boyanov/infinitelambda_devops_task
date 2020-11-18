@@ -17,14 +17,14 @@ terraform {
 
 dependencies {
   paths = [
-    "../tags",
+    "../../../tags",
     "../iam",
     "../network"
   ]
 }
 
 dependency "tags" {
-  config_path = "../tags"
+  config_path = "../../../tags"
 }
 
 dependency "iam" {

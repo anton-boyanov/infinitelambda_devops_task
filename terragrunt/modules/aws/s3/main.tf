@@ -11,7 +11,7 @@ terraform {
 #-------------------------------------------------- Create S3 Bucket
 
 resource "aws_s3_bucket" "this" {
-  bucket = "${var.account_id}-${var.environment}-s3-website.hashicorp.com"
+  bucket = "${var.account_id}-${var.environment}-s3-hello-website"
   acl    = "public-read"
   tags = var.tags
   policy = file("policy.json")

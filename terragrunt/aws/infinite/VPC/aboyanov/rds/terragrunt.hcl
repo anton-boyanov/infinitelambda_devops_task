@@ -1,5 +1,19 @@
 terraform {
-  source = "../../../../../modules/aws/s3"
+  source = "../../../../../modules/aws/postgre"
+}
+
+dependencies {
+  paths = [
+    "../network",
+    "../../../tags"
+  ]
+}
+
+dependency "network" {
+  config_path = "../network"
+}
+dependency "tags" {
+  config_path = "../../../tags"
 }
 
 include {
@@ -15,21 +29,12 @@ locals {
   )
 }
 
-dependencies {
-  paths = [
-    "../tags"
-  ]
-}
-
-dependency "tags" {
-  config_path = "../tags"
-}
-
-
 inputs = {
-  account_id = local.common_vars.account_id
   awsRegion = local.common_vars.awsRegion
   environment = local.common_vars.environment
-  tags = dependency.tags.outputs.tags
-}
+  application_name = local.common_vars.application_name
+  account_id = local.common_vars.account_id
+  vpc_id = dependency.network.outputs.vpc_id
+  public_sg = dependency.network.outputs.public_sg
 
+}
