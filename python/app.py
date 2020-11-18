@@ -12,12 +12,17 @@ password = client.get_parameter(
     Name='/aboyanov/database/password/master',
     WithDecryption=True
 )
+source = boto3.client('rds', region_name='eu-west-1')
+
 try:
+    instances = source.describe_db_instances(DBInstanceIdentifier='aboyanov')
+    rds_host = instances.get('DBInstances')[0].get('Endpoint').get('Address')
+    print(rds_host)
     connection = psycopg2.connect(
         database="postgres",
         user=username.get("Parameter").get("Value"),
         password=password.get("Parameter").get("Value"),
-        host="aboyanov.chnffzayndnb.eu-west-1.rds.amazonaws.com",
+        host=rds_host,
         port='5432'
     )
     cursor = connection.cursor()
