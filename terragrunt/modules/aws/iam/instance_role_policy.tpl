@@ -6,7 +6,8 @@
       "Action": [
         "ssm:*",
         "ecr:*",
-        "s3:*"
+        "s3:*",
+        "rds:*"
       ],
       "Resource": [
         "*"
