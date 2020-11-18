@@ -7,4 +7,4 @@ RUN chmod 777 app.py && \
     pip install boto3 && \
     pip install psycopg2-binary
 
-ENTRYPOINT ["python app.py"]
+ENTRYPOINT ["/app.py"]
