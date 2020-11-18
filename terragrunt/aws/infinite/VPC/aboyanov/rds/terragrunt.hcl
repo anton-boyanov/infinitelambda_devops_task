@@ -37,4 +37,9 @@ inputs = {
   vpc_id = dependency.network.outputs.vpc_id
   public_sg = dependency.network.outputs.public_sg
 
+  engine = local.common_vars.engine
+  engine_version = local.common_vars.engine_version
+  skip_final_snapshot = local.common_vars.skip_final_snapshot
+  instance_class = local.common_vars.instance_class
+
 }

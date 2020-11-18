@@ -33,6 +33,11 @@ inputs = {
   awsRegion = local.common_vars.awsRegion
   environment = local.common_vars.environment
   tags = dependency.tags.outputs.tags
+
+  vpc_cidr = local.common_vars.vpc_cidr
+  public_cidrs = local.common_vars.public_cidrs
+  private_cidrs = local.common_vars.private_cidrs
+  accessip = local.common_vars.accessip
 }
 
 

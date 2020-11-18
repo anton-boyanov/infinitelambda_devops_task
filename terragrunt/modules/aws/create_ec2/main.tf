@@ -39,5 +39,7 @@ resource "aws_instance" "this" {
   iam_instance_profile = var.iam_instance_profile
   user_data = data.template_file.user_data.rendered
 
-  tags = var.tags
+  tags = merge(var.tags, {
+    Name = "aboyanov_Jenkins"
+  })
 }
