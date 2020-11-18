@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Readme.md</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
 
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="devops-i.t.-task">DevOps I.T. Task</h1>
@@ -233,7 +227,6 @@ if(connection):<br>
 cursor.close()<br>
 connection.close()<br>
 print(“PostgreSQL connection is closed”)<br>
-You can delete the current file by clicking the <strong>Remove</strong> button in the file explorer. The file will be moved into the <strong>Trash</strong> folder and automatically deleted after 7 days of inactivity.</p>
 </blockquote>
 
 </div>
