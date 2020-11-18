@@ -36,6 +36,7 @@ inputs = {
   account_id = local.common_vars.account_id
   vpc_id = dependency.network.outputs.vpc_id
   public_sg = dependency.network.outputs.public_sg
+  tags = dependency.tags.outputs.tags
 
   engine = local.common_vars.engine
   engine_version = local.common_vars.engine_version
